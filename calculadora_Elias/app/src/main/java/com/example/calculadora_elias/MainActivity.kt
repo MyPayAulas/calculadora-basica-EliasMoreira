@@ -1,12 +1,17 @@
 package com.example.calculadora_elias
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.calculadora_elias.Model.Calculadora
+import com.example.calculadora_elias.Model.Calculo
+import com.example.calculadora_elias.Model.HistoricoCalculos
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val calculadora: Calculadora = Calculadora()
+    val listaHistorico = HistoricoCalculos(mutableListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +48,14 @@ class MainActivity : AppCompatActivity() {
 
         btn_result.setOnClickListener {
             txtResultado.text = calculadora.calcula_operacao(txtOperacao.text.toString()).toString()
+            val calculo:Calculo = Calculo(txtOperacao.text.toString(),txtResultado.text.toString())
+            listaHistorico.listaCalculos.add(calculo)
+        }
+
+        btn_historico.setOnClickListener {
+            val intent = Intent(this, HistoricoCalculadoraActivity::class.java)
+            intent.putExtra("lista", listaHistorico)
+            startActivity(intent)
         }
     }
 }
