@@ -1,9 +1,9 @@
-package com.example.calculadora_elias
+package com.example.calculadora_elias.CustomListView
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.calculadora_elias.CustomListView.HistoricoCalculoAdapter
 import com.example.calculadora_elias.Model.HistoricoCalculos
+import com.example.calculadora_elias.R
 import kotlinx.android.synthetic.main.activity_historico_calculadora.*
 
 class HistoricoCalculadoraActivity : AppCompatActivity() {

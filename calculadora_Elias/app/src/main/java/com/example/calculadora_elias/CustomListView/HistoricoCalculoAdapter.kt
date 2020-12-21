@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.TextView
 import com.example.calculadora_elias.Model.HistoricoCalculos
 import com.example.calculadora_elias.R
 
@@ -25,7 +24,7 @@ class HistoricoCalculoAdapter(val context: Context, val historico:HistoricoCalcu
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view:View
-        val holder:ViewHolder
+        val holder: ViewHolder
 
         if(convertView == null){
             view = LayoutInflater.from(context).inflate(R.layout.list_view_item_historico, parent, false)

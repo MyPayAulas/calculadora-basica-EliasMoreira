@@ -3,9 +3,11 @@ package com.example.calculadora_elias
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.calculadora_elias.CustomListView.HistoricoCalculadoraActivity
 import com.example.calculadora_elias.Model.Calculadora
 import com.example.calculadora_elias.Model.Calculo
 import com.example.calculadora_elias.Model.HistoricoCalculos
+import com.example.calculadora_elias.RecyclerView.HistoricoRecyclerViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_historico.setOnClickListener {
-            val intent = Intent(this, HistoricoCalculadoraActivity::class.java)
+            //val intent = Intent(this, HistoricoCalculadoraActivity::class.java)
+            val intent = Intent(this, HistoricoRecyclerViewActivity::class.java)
             intent.putExtra("lista", listaHistorico)
             startActivity(intent)
         }
